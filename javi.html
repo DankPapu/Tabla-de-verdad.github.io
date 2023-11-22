@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador Tabla De Verdad</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #FECFCC;
+            margin: 0;
+            padding: 0;
+        }
+        #root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        button {
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <input type="text" id="inputField" placeholder="Ingrese una función booleana">
+        <button onclick="tabla()">Enviar</button>
+        <button onclick="ayuda()">Ayuda</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function tabla() {
+            var input = document.getElementById('inputField').value;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            if (input.length === 0) {
+                alert("El campo está vacío. Por favor, ingrese al menos una variable.");
+            } else {
+                // Your logic for generating truth table and displaying results
+                // ...
+
+                // Example: Displaying a result
+                var resultText = document.createTextNode("Función: " + transformacion(input).toUpperCase());
+                outputDiv.appendChild(resultText);
+            }
+        }
+
+        function ayuda() {
+            // Your help function logic
+            // ...
+        }
+
+        function transformacion(funcion) {
+            // Your transformation logic
+            // ...
+
+            // Example: Simple transformation
+            return funcion.toUpperCase();
+        }
+    </script>
+</body>
+</html>
